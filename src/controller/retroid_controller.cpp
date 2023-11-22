@@ -33,13 +33,13 @@ bool RetroidController::UpdateData(std::vector<uint8_t>& buffer, RetroidKeys& ke
   memcpy(&data, buffer.data(), buffer.size()*sizeof(uint8_t));
   // Perform data validity check in the child class
   if (DataIsValid(data)) {
-    std::bitset<kChannlSize> value_bit(0);
-    int16_t ch[kChannlSize];
-    memcpy(ch, data.data, sizeof(ch));
-    for(int i = 0; i < kChannlSize; i++){
-      value_bit[i] = ch[i];
+    std::bitset<kRetroidButtonSize> keys_value_bit(0);
+    int16_t keys_ch[kRetroidButtonSize];
+    memcpy(keys_ch, data.buttons, sizeof(keys_ch));
+    for(int i = 0; i < kRetroidButtonSize; i++){
+      keys_value_bit[i] = keys_ch[i];
     }
-    keys.value = value_bit.to_ulong();
+    keys.keys_value = keys_value_bit.to_ulong();
 
     keys.left  = (data.left_axis_x == -kJoystickRange) ? (uint8_t)KeyStatus::kPressed 
                   : ((data.left_axis_x ==  kJoystickRange) ? (uint8_t)KeyStatus::kReleased : (uint8_t)KeyStatus::kReleased);

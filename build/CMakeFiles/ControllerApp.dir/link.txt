@@ -1,1 +1,0 @@
-/usr/bin/aarch64-linux-gnu-g++     CMakeFiles/ControllerApp.dir/src/controller/controller.cpp.o CMakeFiles/ControllerApp.dir/src/controller/retroid_controller.cpp.o CMakeFiles/ControllerApp.dir/src/network/udp_receiver.cpp.o CMakeFiles/ControllerApp.dir/src/main.cpp.o  -o ControllerApp fmt/libfmt.a -lpthread -lm -lrt -ldl -lstdc++ 

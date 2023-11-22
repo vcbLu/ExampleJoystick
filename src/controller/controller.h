@@ -52,7 +52,7 @@ public:
      * @brief Gets the controller keys.
      * @return The current controller keys.
      */
-    const KeysType& GetKeys();
+    KeysType& GetKeys();
 
     /**
      * @brief Sets a callback function to be called on each data update.

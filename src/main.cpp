@@ -3,16 +3,18 @@
 
 #include "controller/controller.h"
 #include "controller/retroid_controller.h"
-
+#include "controller/skydroid_controller.h"
 #include "network/udp_receiver.h"
 #include "controller/controller_keys.h"
 
 
 int main(int argc, char* argv[]) {
-  RetroidController rc(43893);
-  const RetroidKeys *keys = &rc.GetKeys();
-  rc.updateCallback_ = [&](int32_t count){
-    std::cout << rc << std::endl;
+  SkydroidController rc_sk(43897);
+  // RetroidController rc(43893);
+  const SkydroidKeys *keys = &rc_sk.GetKeys();
+
+  rc_sk.updateCallback_ = [&](int32_t count){
+    std::cout << rc_sk << std::endl;
   };
     
   for(int i = 0; i < 100000; i ++){

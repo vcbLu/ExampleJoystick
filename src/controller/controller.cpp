@@ -64,7 +64,7 @@ void Controller<KeysType>::StopDataThread() {
  * @return Reference to the keys data.
  */
 template <typename KeysType>
-const KeysType& Controller<KeysType>::GetKeys() {
+KeysType& Controller<KeysType>::GetKeys() {
   std::lock_guard<std::mutex> lock(mutex_);
   return keys_;
 }
@@ -100,3 +100,4 @@ void Controller<KeysType>::SetUpdateCallback(const std::function<void(uint32_t)>
 
 // Explicitly instantiate the template class for specific controller types
 template class Controller<RetroidKeys>;
+template class Controller<SkydroidKeys>;
