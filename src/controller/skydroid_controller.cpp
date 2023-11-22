@@ -102,7 +102,7 @@ std::ostream& operator<<(std::ostream& o, SkydroidController& is){
     "┌{2:─^{1}}┐┌{3:─^{1}}┐┌{4:─^{1}}┐┌{5:─^{1}}┐\n"
     "│{6: ^{1}}││{7: ^{1}}││{8: ^{1}}││{9: ^{1}}│\n"
     "└{0:─^{1}}┘└{0:─^{1}}┘└{0:─^{1}}┘└{0:─^{1}}┘\n", 
-    "", 20, "E", "F", "G", "RIGHT", 
+    "", 20, "E", "F", "Reserved", "Right", 
     is.kButtonStatus[keys.E], is.kButtonStatus[keys.F], is.kButtonStatus[keys.reserved], is.kButtonStatus[keys.right]);
   o<<s ;
 
