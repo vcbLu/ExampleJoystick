@@ -17,10 +17,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 project(ControllerProject)
 
 # Add your source files
-file(GLOB SOURCES "src/controller/*.cpp" "src/network/*.cpp" "src/*.cpp")
+file(GLOB SOURCES "src/controller/*.cpp" "src/network/*.cpp" "src/can2udp/*.cc" "src/*.cpp")
 include_directories(
   src/controller
   src/network
+  src/can2udp
 )
 
 # Add the fmt library as a subdirectory
